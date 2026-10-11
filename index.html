@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Peace Offering 🏳️</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Celebration Canvas (Confetti only when truce accepted) -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <main class="container">
+    <!-- Main Interactive Card -->
+    <div class="card" id="mainCard">
+      <div class="card-glow"></div>
+
+      <!-- State 1: The Peace Offering Question View -->
+      <div class="card-content question-view" id="questionView">
+        <div class="illustration-wrapper">
+          <div class="pulse-ring"></div>
+          <div class="peace-mascot">
+            <!-- Peace Dove / White Flag SVG Mascot -->
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="peace-svg">
+              <defs>
+                <linearGradient id="doveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#e2e8f0"/>
+                </linearGradient>
+                <linearGradient id="flagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#f1f5f9"/>
+                </linearGradient>
+              </defs>
+              <!-- Flag pole -->
+              <line x1="38" y1="28" x2="38" y2="92" stroke="#64748b" stroke-width="4" stroke-linecap="round" />
+              <!-- White truce flag waving -->
+              <path d="M40 32 C55 28, 65 38, 82 32 L82 58 C65 64, 55 54, 40 60 Z" fill="url(#flagGrad)" stroke="#cbd5e1" stroke-width="2" />
+              <!-- Olive branch / leaf icon on flag -->
+              <path d="M52 46 Q60 41 68 47 Q60 52 52 46 Z" fill="#10b981" />
+              <!-- Cute peace character head -->
+              <circle cx="74" cy="74" r="24" fill="url(#doveGrad)" stroke="#cbd5e1" stroke-width="2" />
+              <!-- Eyes -->
+              <circle cx="68" cy="72" r="3" fill="#1e293b" />
+              <circle cx="82" cy="72" r="3" fill="#1e293b" />
+              <!-- Happy smile -->
+              <path d="M71 80 Q75 84 79 80" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round" />
+              <!-- Rosy cheeks -->
+              <circle cx="63" cy="77" r="3" fill="#fca5a5" opacity="0.6" />
+              <circle cx="87" cy="77" r="3" fill="#fca5a5" opacity="0.6" />
+            </svg>
+          </div>
+        </div>
+
+        <span class="badge">Official Peace Offering 🏳️</span>
+        <h1 class="question-title">Are we good now?</h1>
+        <p class="question-subtitle">I come in peace. Can we call a truce? 🤝</p>
+
+        <!-- Buttons Area -->
+        <div class="actions-wrapper" id="actionsWrapper">
+          <button id="yesBtn" class="btn btn-yes" aria-label="Accept Peace">
+            <span class="btn-text">Yes, truce! 🤝</span>
+          </button>
+          
+          <button id="noBtn" class="btn btn-no" aria-label="Still mad">
+            <span class="btn-text" id="noBtnText">Still mad 😤</span>
+          </button>
+        </div>
+
+        <p class="dodge-counter" id="dodgeCounter" aria-live="polite"></p>
+      </div>
+
+      <!-- State 2: Inside the Main Card Box (Truce Accepted) -->
+      <div class="card-content success-view hidden" id="successView">
+        <div class="celebration-badge">Phew! 🏳️✌️</div>
+        <div class="celebration-icon">🤝</div>
+        
+        <h2 class="success-title">We're Good! 🎉</h2>
+        
+        <div class="message-box">
+          <p class="peace-message">
+            "Okay na nya ta wala ra nadugang imong kalagot nako? T.T Peacee out chaaa"
+          </p>
+        </div>
+
+        <button id="replayBtn" class="btn btn-replay">
+          <span>Reset Truce ↺</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
